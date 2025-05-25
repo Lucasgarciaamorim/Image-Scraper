@@ -33,8 +33,8 @@ Uma aplicação desktop com interface gráfica para automatizar a busca e o down
 ### 1. Clone o projeto
 
 ```bash
-git clone https://github.com/seu-usuario/google-image-scraper.git
-cd google-image-scraper
+git clone https://github.com/Lucasgarciaamorim/POSCONTROLE-GoogleScraper
+cd POSCONTROLE-GoogleScraper
 ```
 
 ### 2. Crie um ambiente virtual (opcional, mas recomendado)
