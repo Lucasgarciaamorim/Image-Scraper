@@ -1,5 +1,4 @@
 import os
-import sys
 import threading
 from tkinter import Tk, Button, Label, messagebox, filedialog, DISABLED, NORMAL, Entry, Frame
 from tkinter.ttk import Progressbar

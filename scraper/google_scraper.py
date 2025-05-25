@@ -1,8 +1,4 @@
-import os
 import time
-from io import BytesIO
-from PIL import Image, UnidentifiedImageError
-import requests
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
