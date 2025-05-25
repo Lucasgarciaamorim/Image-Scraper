@@ -1,117 +1,81 @@
-📘 Documentação Técnica – Google Image Scraper com Interface Gráfica
-📌 Visão Geral
-Este projeto é uma aplicação desktop com interface gráfica (Tkinter) que permite automatizar o processo de busca e download da primeira imagem válida de um produto no Google Imagens, com base em uma planilha Excel contendo os nomes dos produtos. A aplicação também permite redimensionar imagens, compactar a pasta de imagens baixadas e exportar os dados tratados.
+# Google Image Scraper GUI
 
-🎯 Objetivos
-Automatizar a coleta de imagens de produtos com fundo branco.
+Uma aplicação desktop com interface gráfica para automatizar a busca e o download de imagens do Google com base em uma planilha Excel contendo produtos. Ideal para catálogos, e-commerces ou profissionais que precisam buscar imagens de forma padronizada (ex: fundo branco).
 
-Salvar as imagens com base no código interno fornecido na planilha.
 
-Permitir redimensionamento e compactação das imagens.
 
-Apresentar feedback visual e uma tabela interativa ao usuário.
+---
 
-🧱 Estrutura do Projeto
-bash
-Copiar
-Editar
-POSCONTROLE/
-│
-├── main.py                  # Ponto de entrada da aplicação
-├── gui/
-│   └── app.py               # Interface gráfica da aplicação
-│
-├── scraper/
-│   └── google_scraper.py    # Lógica de scraping com Selenium
-│
-├── services/
-│   └── image_service.py     # Funções de manipulação de imagens (download, resize, zip)
-│
-├── assets/
-│   └── images/              # Local onde as imagens são salvas
-│
-├── tests/
-│   ├── test_scraper.py      # Testes do scraper com mocks
-│   ├── test_image_service.py# Testes de manipulação de imagem
-│   └── test_app_logic.py    # Testes de integração de lógica GUI
-│
-├── requirements.txt         # Dependências do projeto
-└── README.md                # Documentação resumida para desenvolvedores
-⚙️ Funcionalidades
-1. Carregamento da Planilha
-Aceita arquivos .xls e .xlsx
+## 🔧 Funcionalidades
 
-Exige colunas: Nome Produto e Código Interno
+- 📥 Leitura de arquivos Excel (`.xls` ou `.xlsx`)
+- 🔍 Busca automatizada de imagens no Google (com Selenium)
+- 💾 Download e salvamento automático na Área de Trabalho do usuário
+- 📐 Redimensionamento em lote (com conversão para PNG)
+- 🗜️ Compactação das imagens em um `.zip`
+- 📊 Tabela interativa com status de download (✅ ou ❌)
 
-Adiciona automaticamente a coluna Downloaded
+---
 
-2. Busca e Download de Imagem
-Faz busca no Google Imagens com termo "{Nome Produto} fundo branco"
+## 🖥️ Tecnologias Utilizadas
 
-Salva a primeira imagem válida encontrada
+- Python 3.10+
+- Selenium
+- Tkinter (Interface Gráfica)
+- Pandas / Pandastable
+- Pillow
+- WebDriver Manager
 
-Nome do arquivo = Código Interno.png
+---
 
-Armazena as imagens na pasta assets/images/ (ou Área de Trabalho)
+## 📦 Instalação
 
-3. Redimensionamento
-Permite definir largura e altura
+### 1. Clone o projeto
 
-Redimensiona todas as imagens da pasta para PNG com essas dimensões
+```bash
+git clone https://github.com/seu-usuario/google-image-scraper.git
+cd google-image-scraper
+```
 
-4. Compactação
-Compacta todas as imagens da pasta em um .zip customizado
+### 2. Crie um ambiente virtual (opcional, mas recomendado)
 
-5. Tabela Interativa
-Tabela mostra produtos e status (TRUE / FALSE) se imagem foi baixada
+```bash
+python -m venv venv
+venv\Scripts\activate  # Windows
+```
 
-Atualiza dinamicamente durante a execução
-
-🧪 Testes Automatizados
-Os testes são escritos com pytest e usam unittest.mock para simular chamadas da Web e manipulação de arquivos:
-
-test_scraper.py: testa busca de imagens e tratamento de erros
-
-test_image_service.py: testa redimensionamento, download e zip
-
-test_app_logic.py: valida carregamento de planilha, lógica de controle e callbacks
-
-Para rodar os testes:
-
-bash
-Copiar
-Editar
-pytest tests/
-💾 Requisitos
-Python 3.10+
-
-Google Chrome
-
-ChromeDriver compatível (instalado automaticamente via webdriver-manager)
-
-📦 Dependências
-Instale com:
-
-bash
-Copiar
-Editar
-pip install -r requirements.txt
-Conteúdo típico do requirements.txt:
-
-txt
-Copiar
-Editar
-pandas
-selenium
-webdriver-manager
-Pillow
-openpyxl
-tk
-pandastable
-🚀 Execução
-Execute com:
-
-bash
-Copiar
-Editar
+### Como Usar
+1.Execute o programa com:
+```bash
 python main.py
+```
+2. Clique em "Carregar Excel" e selecione uma planilha contendo as colunas:
+
+```Nome Produto``` – Nome para busca no Google
+
+```Código Interno``` – Nome do arquivo a ser salvo
+
+Clique em <strong>"iniciar Buscas"</strong> para iniciar.
+
+Utilize as opções de redimensionamento e zip conforme necessidade.
+
+## 📌 Observações
+As imagens são salvas automaticamente no diretório ```Desktop``` do Usuário Administrador, dentro da pasta ```Imagens```.
+
+```C:\Users\<Seu Usuário\Desktop\Imagens```
+
+Evite nomes duplicados de código interno.
+
+O scraping pode falhar se o Google bloquear temporariamente o navegador. Tente de novo após alguns minutos.
+
+
+📄 Licença
+Este projeto está sob a licença MIT. Veja o arquivo LICENSE para mais detalhes.
+
+
+## 👨‍💻 Autor
+Desenvolvido por Lucas Garcia – LinkedIn : <link> https://www.linkedin.com/in/lucasgarciaamorim/ <link/>
+
+
+
+                
