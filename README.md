@@ -1,4 +1,4 @@
-# POSCONTROLE - Google Image Scraper
+# Image Scraper
 
 Uma aplicação desktop com interface gráfica para automatizar a busca e o download de imagens do Google com base em uma planilha Excel contendo produtos. Ideal para catálogos, e-commerces ou profissionais que precisam buscar imagens de forma padronizada (ex: fundo branco).
 
