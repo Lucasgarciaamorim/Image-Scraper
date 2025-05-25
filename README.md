@@ -13,7 +13,7 @@ Uma aplicação desktop com interface gráfica para automatizar a busca e o down
 - 💾 Download e salvamento automático na Área de Trabalho do usuário
 - 📐 Redimensionamento em lote (com conversão para PNG)
 - 🗜️ Compactação das imagens em um `.zip`
-- 📊 Tabela interativa com status de download (✅ ou ❌)
+- 📊 Tabela interativa com status de download (TRUE ou FALSE)
 
 ---
 
