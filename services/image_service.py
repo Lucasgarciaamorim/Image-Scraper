@@ -19,7 +19,11 @@ def save_image_from_url(url: str, folder="assets/images", filename="output", res
         if resize:
             img = img.resize(resize)
         ext = img.format.lower() if img.format else "jpg"
-        filename = f"{filename}.{ext}"
+        try:
+            num = int(filename)
+            filename = f"{num:02}.{ext}"
+        except ValueError:
+            filename = f"{filename}.{ext}"
         path = os.path.join(folder, filename)
         img.save(path)
         return True
